@@ -29,10 +29,18 @@ namespace GVB.Models
         public virtual int feedlotID { get; set; }
         public virtual Feedlot Feedlot { get; set; }
 
+        [Required]
         [DisplayName("Breed")]
         [ForeignKey("CattleType")] 
         public virtual int CattleTypeID { get; set; }
         public virtual CattleType CattleType { get; set; }
+
+        [Required]
+        [DisplayName("Date Recieved")]
+        public virtual DateTime DateRecieved { get; set; }
+
+        [DisplayName("Shipped Recieved")]
+        public virtual DateTime ShippedDate { get; set; }
 
     }
     

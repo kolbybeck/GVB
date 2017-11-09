@@ -19,9 +19,9 @@ namespace GVB.DAL
             public DbSet<Dairy> Dairy { get; set; }
             public DbSet<Feedlot> Feedlot { get; set; }
             public DbSet<Deceased> Deceased { get; set; }
-
-
-
-
+            public DbSet<Employee> Employee { get; set; }
+            public DbSet<Roles> Roles { get; set; }
+            public DbSet<CattleType> CattleType { get; set; }
+        public object Employees { get; internal set; }
     }
 }
