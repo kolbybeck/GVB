@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -10,10 +11,7 @@ namespace GVB.DAL
     public class GVBDBContext : DbContext
     {
 
-            public GVBDBContext() : base("GVBDBContext")
-            {
-
-            }
+            public GVBDBContext() : base("GVBDBContext"){ }
 
             public DbSet<Cattle> Cattle { get; set; }
             public DbSet<Dairy> Dairy { get; set; }
@@ -22,6 +20,10 @@ namespace GVB.DAL
             public DbSet<Employee> Employee { get; set; }
             public DbSet<Roles> Roles { get; set; }
             public DbSet<CattleType> CattleType { get; set; }
-        public object Employees { get; internal set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
     }
 }

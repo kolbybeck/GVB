@@ -1,0 +1,26 @@
+﻿@model GVB.Models.Feedlot
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Feedlot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.feedlotID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

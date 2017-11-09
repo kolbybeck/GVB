@@ -24,7 +24,7 @@ namespace GVB.Models
 
         [Required]
         [DisplayName("Address")]
-        public String MdAddress { get; set; }
+        public String dAddress { get; set; }
 
         [Required]
         [DisplayName("City")]
@@ -36,7 +36,7 @@ namespace GVB.Models
 
         [Required]
         [DisplayName("Zip")]
-        public String dZip { get; set; }
+        public int dZip { get; set; }
 
         [Required]
         [DisplayName("Phone")]

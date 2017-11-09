@@ -14,11 +14,11 @@ namespace GVB.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int cattleID { get; set; }
+        public int CattleID { get; set; }
 
         [Required]
         [DisplayName("Cattle Number")]
-        public String cattleNumber { get; set; }
+        public String CattleNumber { get; set; }
 
         [Required]
         [DisplayName("Date Recieved")]
@@ -35,7 +35,7 @@ namespace GVB.Models
 
         [Required]
         [ForeignKey("Feedlot")]
-        public virtual int feedlotID { get; set; }
+        public virtual int FeedlotID { get; set; }
         public virtual Feedlot Feedlot { get; set; }
 
         [Required]
@@ -44,7 +44,7 @@ namespace GVB.Models
         public virtual int CattleTypeID { get; set; }
         public virtual CattleType CattleType { get; set; }
 
-
+        [Required]
         [ForeignKey("Employee")]
         public virtual int EmployeeID { get; set; }
         public virtual Employee Employee { get; set; }

@@ -11,112 +11,107 @@ using GVB.Models;
 
 namespace GVB.Controllers
 {
-    public class EmployeesController : Controller
+    public class CattleTypeController : Controller
     {
         private GVBDBContext db = new GVBDBContext();
 
-        // GET: Employees
+        // GET: CattleTypes
         public ActionResult Index()
         {
-            var employees = db.Employees.Include(e => e.Roles);
-            return View(employees.ToList());
+            return View(db.CattleType.ToList());
         }
 
-        // GET: Employees/Details/5
+        // GET: CattleTypes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
+            CattleType cattleType = db.CattleType.Find(id);
+            if (cattleType == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(cattleType);
         }
 
-        // GET: Employees/Create
+        // GET: CattleTypes/Create
         public ActionResult Create()
         {
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleDescr");
             return View();
         }
 
-        // POST: Employees/Create
+        // POST: CattleTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeID,EmpFname,EmpLname,EmpPhone,RoleID")] Employee employee)
+        public ActionResult Create([Bind(Include = "CattleTypeID,CattleTypeDesc")] CattleType cattleType)
         {
             if (ModelState.IsValid)
             {
-                db.Employees.Add(employee);
+                db.CattleType.Add(cattleType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleDescr", employee.RoleID);
-            return View(employee);
+            return View(cattleType);
         }
 
-        // GET: Employees/Edit/5
+        // GET: CattleTypes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
+            CattleType cattleType = db.CattleType.Find(id);
+            if (cattleType == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleDescr", employee.RoleID);
-            return View(employee);
+            return View(cattleType);
         }
 
-        // POST: Employees/Edit/5
+        // POST: CattleTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeID,EmpFname,EmpLname,EmpPhone,RoleID")] Employee employee)
+        public ActionResult Edit([Bind(Include = "CattleTypeID,CattleTypeDesc")] CattleType cattleType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employee).State = EntityState.Modified;
+                db.Entry(cattleType).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleDescr", employee.RoleID);
-            return View(employee);
+            return View(cattleType);
         }
 
-        // GET: Employees/Delete/5
+        // GET: CattleTypes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
+            CattleType cattleType = db.CattleType.Find(id);
+            if (cattleType == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(cattleType);
         }
 
-        // POST: Employees/Delete/5
+        // POST: CattleTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Employee employee = db.Employees.Find(id);
-            db.Employees.Remove(employee);
+            CattleType cattleType = db.CattleType.Find(id);
+            db.CattleType.Remove(cattleType);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<GVB.Models.Deceased>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CattleType.CattleTypeDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dairy.dName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.EmpFname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Feedlot.fName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CattleNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateRecieved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeceaseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CattleType.CattleTypeDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dairy.dName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.EmpFname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feedlot.fName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CattleNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeceaseDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CattleID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CattleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CattleID })
+        </td>
+    </tr>
+}
+
+</table>

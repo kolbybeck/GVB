@@ -11,107 +11,107 @@ using GVB.Models;
 
 namespace GVB.Controllers
 {
-    public class CattleTypesController : Controller
+    public class FeedlotController : Controller
     {
         private GVBDBContext db = new GVBDBContext();
 
-        // GET: CattleTypes
+        // GET: Feedlots
         public ActionResult Index()
         {
-            return View(db.CattleTypes.ToList());
+            return View(db.Feedlot.ToList());
         }
 
-        // GET: CattleTypes/Details/5
+        // GET: Feedlots/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CattleType cattleType = db.CattleTypes.Find(id);
-            if (cattleType == null)
+            Feedlot feedlot = db.Feedlot.Find(id);
+            if (feedlot == null)
             {
                 return HttpNotFound();
             }
-            return View(cattleType);
+            return View(feedlot);
         }
 
-        // GET: CattleTypes/Create
+        // GET: Feedlots/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CattleTypes/Create
+        // POST: Feedlots/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CattleTypeID,CattleTypeDesc")] CattleType cattleType)
+        public ActionResult Create([Bind(Include = "feedlotID,fName")] Feedlot feedlot)
         {
             if (ModelState.IsValid)
             {
-                db.CattleTypes.Add(cattleType);
+                db.Feedlot.Add(feedlot);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cattleType);
+            return View(feedlot);
         }
 
-        // GET: CattleTypes/Edit/5
+        // GET: Feedlots/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CattleType cattleType = db.CattleTypes.Find(id);
-            if (cattleType == null)
+            Feedlot feedlot = db.Feedlot.Find(id);
+            if (feedlot == null)
             {
                 return HttpNotFound();
             }
-            return View(cattleType);
+            return View(feedlot);
         }
 
-        // POST: CattleTypes/Edit/5
+        // POST: Feedlots/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CattleTypeID,CattleTypeDesc")] CattleType cattleType)
+        public ActionResult Edit([Bind(Include = "feedlotID,fName")] Feedlot feedlot)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cattleType).State = EntityState.Modified;
+                db.Entry(feedlot).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cattleType);
+            return View(feedlot);
         }
 
-        // GET: CattleTypes/Delete/5
+        // GET: Feedlots/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CattleType cattleType = db.CattleTypes.Find(id);
-            if (cattleType == null)
+            Feedlot feedlot = db.Feedlot.Find(id);
+            if (feedlot == null)
             {
                 return HttpNotFound();
             }
-            return View(cattleType);
+            return View(feedlot);
         }
 
-        // POST: CattleTypes/Delete/5
+        // POST: Feedlots/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CattleType cattleType = db.CattleTypes.Find(id);
-            db.CattleTypes.Remove(cattleType);
+            Feedlot feedlot = db.Feedlot.Find(id);
+            db.Feedlot.Remove(feedlot);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
