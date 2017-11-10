@@ -1,15 +1,62 @@
 ﻿
 @{
+    Layout = null;
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="StyleSheet" href="~/Content/StyleSheet.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Valley Beef</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <span class="login-title">Golden Valley Beef</span>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <h2>Login</h2>
 
-@using (Html.BeginForm("Login", "Home", FormMethod.Post))
-{
-    <label for="inputEmail">Username</label>
-    @Html.TextBox("Username")
-    <label for="inputPassword">Password</label>
-    @Html.Password("Password")
-    <button type="submit">Login</button>
-}
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            <div class="container login-credentials" align="center">
+                <div class="row">
+                    <label for="inputEmail">Username:</label>
+                    @Html.TextBox("Username")
+                </div>
+                <div class="row">
+                    <label for="inputPassword">Password:</label>
+                    @Html.Password("Password")
+                </div>
+                <br />
+                <div class="row">
+                    <button type="submit">Login</button>
+                </div>
+            </div>
+        }
+        <hr />
+        <footer>
+            <center>
+                <div class="imgcontainer">
+                    <img alighn="center" width="150" height="90" src="~/Content/Images/cow.jpg" alt="Cow Image">
+                </div>
+            </center>
+            <br />
+            <br />
+            <div>
+                <p>&copy; @DateTime.Now.Year - Golden Valley Beef</p>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

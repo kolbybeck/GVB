@@ -57,6 +57,18 @@ span.psw {
     padding-top: 16px;
 }
 
+.login-title {
+    font-size: large;
+    color: gainsboro;
+    margin-left: 10px;
+}
+
+.login-credentials {
+    font-size: large;
+    font-weight: bold;
+    width: 55%;
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
