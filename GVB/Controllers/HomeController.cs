@@ -3,11 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-//Michael McKean has contributed and I've made new edits
+using System.Web.Security;
+
 namespace GVB.Controllers
 {
     public class HomeController : Controller
     {
+        //http GET
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        //http POST
+        [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
+        {
+            String username = form["Username"].ToString();
+            String password = form["Password"].ToString();
+
+            if (string.Equals(username, "admin") && (string.Equals(password, "password")))
+            {
+                FormsAuthentication.SetAuthCookie(username, rememberMe);
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [Authorize]
         public ActionResult Index()
         {
             return View();
