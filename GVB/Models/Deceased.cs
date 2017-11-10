@@ -21,10 +21,6 @@ namespace GVB.Models
         public String CattleNumber { get; set; }
 
         [Required]
-        [DisplayName("Date Recieved")]
-        public DateTime DateRecieved { get; set; }
-
-        [Required]
         [DisplayName("Deceased Date")]
         public DateTime DeceaseDate { get; set; }
 
@@ -37,12 +33,6 @@ namespace GVB.Models
         [ForeignKey("Feedlot")]
         public virtual int FeedlotID { get; set; }
         public virtual Feedlot Feedlot { get; set; }
-
-        [Required]
-        [DisplayName("Breed")]
-        [ForeignKey("CattleType")]
-        public virtual int CattleTypeID { get; set; }
-        public virtual CattleType CattleType { get; set; }
 
         [Required]
         [ForeignKey("Employee")]

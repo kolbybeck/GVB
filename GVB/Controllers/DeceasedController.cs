@@ -18,7 +18,7 @@ namespace GVB.Controllers
         // GET: Deceaseds
         public ActionResult Index()
         {
-            var deceased = db.Deceased.Include(d => d.CattleType).Include(d => d.Dairy).Include(d => d.Employee).Include(d => d.Feedlot);
+            var deceased = db.Deceased.Include(d => d.Dairy).Include(d => d.Employee).Include(d => d.Feedlot);
             return View(deceased.ToList());
         }
 
@@ -40,10 +40,9 @@ namespace GVB.Controllers
         // GET: Deceaseds/Create
         public ActionResult Create(int feedlotNum)
         {
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc");
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName");
             ViewBag.EmployeeID = new SelectList(db.Employee, "EmployeeID", "EmpFname");
-            ViewBag.FeedlotID = new SelectList(db.Feedlot, feedlotNum, "fName");
+            ViewBag.FeedlotID = new SelectList(db.Feedlot, "FeedlotId", "fName");
             return View();
         }
 
@@ -61,7 +60,6 @@ namespace GVB.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc", deceased.CattleTypeID);
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName", deceased.DairyID);
             ViewBag.EmployeeID = new SelectList(db.Employee, "EmployeeID", "EmpFname", deceased.EmployeeID);
             ViewBag.FeedlotID = new SelectList(db.Feedlot, "feedlotID", "fName", deceased.FeedlotID);
@@ -80,7 +78,6 @@ namespace GVB.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc", deceased.CattleTypeID);
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName", deceased.DairyID);
             ViewBag.EmployeeID = new SelectList(db.Employee, "EmployeeID", "EmpFname", deceased.EmployeeID);
             ViewBag.FeedlotID = new SelectList(db.Feedlot, "feedlotID", "fName", deceased.FeedlotID);
@@ -100,7 +97,6 @@ namespace GVB.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc", deceased.CattleTypeID);
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName", deceased.DairyID);
             ViewBag.EmployeeID = new SelectList(db.Employee, "EmployeeID", "EmpFname", deceased.EmployeeID);
             ViewBag.FeedlotID = new SelectList(db.Feedlot, "feedlotID", "fName", deceased.FeedlotID);
