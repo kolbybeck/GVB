@@ -11,6 +11,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.CattleNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CattleNumber)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.CattleType.CattleTypeDesc)
         </dt>
 
@@ -35,14 +43,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cattleNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cattleNumber)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.DateRecieved)
         </dt>
 
@@ -50,17 +50,9 @@
             @Html.DisplayFor(model => model.DateRecieved)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShippedDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShippedDate)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.cattleID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CattleID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
