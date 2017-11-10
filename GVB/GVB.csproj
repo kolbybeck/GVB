@@ -156,6 +156,7 @@
     <Compile Include="Controllers\FeedlotController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\GVBDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -245,6 +246,7 @@
     <Content Include="Views\Feedlot\Details.cshtml" />
     <Content Include="Views\Feedlot\Edit.cshtml" />
     <Content Include="Views\Feedlot\Index.cshtml" />
+    <Content Include="Views\User\ChooseFeedlot.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
