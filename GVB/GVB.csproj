@@ -208,7 +208,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CattleType\Create.cshtml" />
     <Content Include="Views\CattleType\Delete.cshtml" />
     <Content Include="Views\CattleType\Details.cshtml" />
@@ -247,6 +246,7 @@
     <Content Include="Views\User\ChooseFeedlot.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\User\Admin.cshtml" />
+    <Content Include="Views\Deceased\ConfirmCow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

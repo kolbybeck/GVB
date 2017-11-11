@@ -46,6 +46,26 @@ namespace GVB.Controllers
             return View();
         }
 
+        public ActionResult ConfirmCow(int? feedlotNum, string dName, string CattleNumber)
+        {
+            if( feedlotNum != null)
+            {
+                IEnumerable<Cattle> cattle =
+                db.Database.SqlQuery<Cattle>("SELECT Cattle.CattleID, Cattle.CattleNumber, Cattle.DairyID, Cattle.FeedlotID, " +
+                "Cattle.CattleTypeID, Cattle.DateReceived " +
+                "FROM Cattle INNER JOIN Dairy ON Cattle.DairyID = Dairy.DairyID " +
+                "WHERE Cattle.FeedlotID = " + feedlotNum + " AND Dairy.dName = " + dName +
+                " AND Cattle.CattleNumber = " + CattleNumber);
+
+                return View(Cattle.FirstOrDefault());
+            }
+            else
+            {
+                return RedirectToAction("ChooseFeedlot", "User");
+            }
+            
+        }
+
         // POST: Deceaseds/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
