@@ -25,7 +25,6 @@ namespace GVB.Controllers
             if (string.Equals(username, "admin") && (string.Equals(password, "password")))
             {
                 FormsAuthentication.SetAuthCookie(username, rememberMe);
-
                 return RedirectToAction("ChooseFeedlot", "User");
             }
             else if (string.Equals(username, "user") && (string.Equals(password, "password")))

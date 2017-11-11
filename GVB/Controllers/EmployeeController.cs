@@ -11,6 +11,7 @@ using GVB.Models;
 
 namespace GVB.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private GVBDBContext db = new GVBDBContext();

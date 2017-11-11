@@ -13,9 +13,7 @@ namespace GVB.Controllers
         // This controller is to control all views seen by everyday users - only views included should be (1) selecting feedlot and
         // (2) selecting the dairy (dropdown) and typing in the cow # assigned from the dairy to move the cow from the cattle table 
         // to the deceased database
-
-        private GVBDBContext db = new GVBDBContext();
-
+        
         public ActionResult ChooseFeedlot()
         {
             Dictionary<int, string> flDic = new Dictionary<int, string>();
@@ -27,6 +25,7 @@ namespace GVB.Controllers
             return View(flDic);
         }
 
+        [Authorize]
         public ActionResult Admin()
         {
             return View();
