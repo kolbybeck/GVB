@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+<div class="col-lg-12" style="text-align:center">
+    <div class="row">
+        @Html.ActionLink("View Dairies", "Index", "Dairy", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("View Feedlots", "Index", "Feedlot", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("View Employees", "Index", "Employee", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("View Roles", "Index", "Roles", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("View Cattle", "Index", "Cattle", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("View Deceased Cattle", "Index", "Deceased", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <div class="row">
+        @Html.ActionLink("View Cattle Types", "Index", "CattleType", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+</div>
+
