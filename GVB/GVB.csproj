@@ -210,7 +210,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\CattleType\Create.cshtml" />
     <Content Include="Views\CattleType\Delete.cshtml" />
-    <Content Include="Views\CattleType\Details.cshtml" />
     <Content Include="Views\CattleType\Edit.cshtml" />
     <Content Include="Views\CattleType\Index.cshtml" />
     <Content Include="Views\Roles\Create.cshtml" />

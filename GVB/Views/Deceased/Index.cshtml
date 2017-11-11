@@ -7,13 +7,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create",, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-primary btn-large" })
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CattleType.CattleTypeDesc)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Dairy.dName)
         </th>
@@ -27,9 +24,6 @@
             @Html.DisplayNameFor(model => model.CattleNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateRecieved)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.DeceaseDate)
         </th>
         <th></th>
@@ -37,9 +31,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CattleType.CattleTypeDesc)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Dairy.dName)
         </td>
@@ -51,9 +42,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CattleNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateRecieved)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DeceaseDate)
