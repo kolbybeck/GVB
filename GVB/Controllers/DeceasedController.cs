@@ -46,6 +46,14 @@ namespace GVB.Controllers
             return View();
         }
 
+        public ActionResult ConfirmCow(int feedlotNum, string dName, string CattleNumber)
+        {
+            IEnumerable<Cattle> cattle =
+                db.Database.SqlQuery<Cattle>("SELECT Cattle.CattleID, Cattle.DairyID, ")
+
+            return View(Cattle.FirstOrDefault())
+        }
+
         // POST: Deceaseds/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
