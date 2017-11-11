@@ -38,7 +38,7 @@ namespace GVB.Controllers
         }
 
         // GET: Deceaseds/Create
-        public ActionResult Create(int feedlotNum)
+        public ActionResult Create(int feedlotID, string feedlotName)
         {
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName");
             ViewBag.EmployeeID = new SelectList(db.Employee, "EmployeeID", "EmpFname");

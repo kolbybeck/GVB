@@ -18,10 +18,13 @@ namespace GVB.Controllers
 
         public ActionResult ChooseFeedlot()
         {
-            IEnumerable<Feedlot> feedlot =
-                db.Database.SqlQuery<Feedlot>("SELECT FeedlotID, fName FROM Feedlot");
-            
-            return View(feedlot);
+            Dictionary<int, string> flDic = new Dictionary<int, string>();
+            flDic.Add(1, "Kody");
+            flDic.Add(2, "Matt");
+            flDic.Add(3, "Oakley");
+            flDic.Add(4, "Kelton");
+
+            return View(flDic);
         }
 
         public ActionResult Admin()
