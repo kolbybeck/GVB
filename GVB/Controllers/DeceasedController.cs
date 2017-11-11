@@ -38,11 +38,12 @@ namespace GVB.Controllers
         }
 
         // GET: Deceaseds/Create
-        public ActionResult Create(int feedlotID, string feedlotName)
+        public ActionResult Create(int? feedlotID, string feedlotName)
         {
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName");
             ViewBag.EmployeeID = new SelectList(db.Employee, "EmployeeID", "EmpFname");
             ViewBag.FeedlotID = new SelectList(db.Feedlot, "FeedlotId", "fName");
+            ViewBag.Navigation = feedlotID;
             return View();
         }
 

@@ -28,6 +28,8 @@ namespace GVB.Models
 
         [Required(ErrorMessage = "Phone number required")]
         [DisplayName("Phone")]
+        [DataType(DataType.PhoneNumber)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:###-###-####}")]
         public String EmpPhone { get; set; }
 
         [Required(ErrorMessage = "Please assign role")]
