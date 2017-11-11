@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GVB.Models;
+using GVB.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,9 +14,14 @@ namespace GVB.Controllers
         // (2) selecting the dairy (dropdown) and typing in the cow # assigned from the dairy to move the cow from the cattle table 
         // to the deceased database
 
+        private GVBDBContext db = new GVBDBContext();
+
         public ActionResult ChooseFeedlot()
         {
-            return View();
+            IEnumerable<Feedlot> feedlot =
+                db.Database.SqlQuery<Feedlot>("SELECT FeedlotID, fName FROM Feedlot");
+            
+            return View(feedlot);
         }
 
         public ActionResult Admin()
