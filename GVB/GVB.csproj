@@ -245,6 +245,7 @@
     <Content Include="Views\User\ChooseFeedlot.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\User\Admin.cshtml" />
+    <Content Include="Views\Deceased\ConfirmCow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
