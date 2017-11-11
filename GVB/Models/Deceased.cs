@@ -22,7 +22,7 @@ namespace GVB.Models
 
         [Required]
         [DisplayName("Deceased Date")]
-        public DateTime DeceaseDate { get; set; }
+        public DateTime DeceasedDate { get; set; }
 
         [Required]
         [ForeignKey("Dairy")]

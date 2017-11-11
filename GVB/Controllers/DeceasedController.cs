@@ -46,32 +46,32 @@ namespace GVB.Controllers
             return View();
         }
 
-        public ActionResult ConfirmCow(int? feedlotNum, string dName, string CattleNumber)
-        {
-            if( feedlotNum != null)
-            {
-                IEnumerable<Cattle> cattle =
-                db.Database.SqlQuery<Cattle>("SELECT Cattle.CattleID, Cattle.CattleNumber, Cattle.DairyID, Cattle.FeedlotID, " +
-                "Cattle.CattleTypeID, Cattle.DateReceived " +
-                "FROM Cattle INNER JOIN Dairy ON Cattle.DairyID = Dairy.DairyID " +
-                "WHERE Cattle.FeedlotID = " + feedlotNum + " AND Dairy.dName = " + dName +
-                " AND Cattle.CattleNumber = " + CattleNumber);
+        //public ActionResult ConfirmCow(int? feedlotNum, string dName, string CattleNumber)
+        //{
+        //    if( feedlotNum != null)
+        //    {
+        //        IEnumerable<Cattle> cattle =
+        //        db.Database.SqlQuery<Cattle>("SELECT Cattle.CattleID, Cattle.CattleNumber, Cattle.DairyID, Cattle.FeedlotID, " +
+        //        "Cattle.CattleTypeID " +
+        //        "FROM Cattle INNER JOIN Dairy ON Cattle.DairyID = Dairy.DairyID " +
+        //        "WHERE Cattle.FeedlotID = " + feedlotNum + " AND Dairy.dName = " + dName +
+        //        " AND Cattle.CattleNumber = " + CattleNumber);
 
-                return View(Cattle.FirstOrDefault());
-            }
-            else
-            {
-                return RedirectToAction("ChooseFeedlot", "User");
-            }
+        //        return View(Cattle.FirstOrDefault());
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("ChooseFeedlot", "User");
+        //    }
             
-        }
+        //}
 
         // POST: Deceaseds/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CattleID,CattleNumber,DateRecieved,DeceaseDate,DairyID,FeedlotID,CattleTypeID,EmployeeID")] Deceased deceased)
+        public ActionResult Create([Bind(Include = "CattleID,CattleNumber,DeceasedDate,DairyID,FeedlotID,CattleTypeID,EmployeeID")] Deceased deceased)
         {
             if (ModelState.IsValid)
             {
@@ -109,7 +109,7 @@ namespace GVB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CattleID,CattleNumber,DateRecieved,DeceaseDate,DairyID,FeedlotID,CattleTypeID,EmployeeID")] Deceased deceased)
+        public ActionResult Edit([Bind(Include = "CattleID,CattleNumber,DeceasedDate,DairyID,FeedlotID,CattleTypeID,EmployeeID")] Deceased deceased)
         {
             if (ModelState.IsValid)
             {

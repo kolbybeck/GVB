@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "ChooseFeedlot";
+    int iCount = 1;
 }
 
 <h2>Choose Feedlot</h2>
@@ -9,7 +10,7 @@
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     @foreach (var item in Model)
     {
-        int iCount = 1;
+
         <div class="row" align="center">
             @Html.ActionLink(item.Value, "Create", "Deceased", new { feedlotID = iCount, feedlotName = item.Value }, new { @class = "btn btn-primary btn-large" })
         </div>

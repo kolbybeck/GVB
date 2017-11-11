@@ -45,11 +45,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DeceaseDate)
+            @Html.DisplayNameFor(model => model.DeceasedDate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DeceaseDate)
+            @Html.DisplayFor(model => model.DeceasedDate)
         </dd>
 
     </dl>
@@ -58,8 +58,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+            <input type="submit" value="Delete" class="btn btn-default" />
         </div>
     }
 </div>
