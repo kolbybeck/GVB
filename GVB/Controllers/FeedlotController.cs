@@ -21,6 +21,19 @@ namespace GVB.Controllers
             return View(db.Feedlot.ToList());
         }
 
+        public ActionResult ChooseFeedlot()
+        {
+            Dictionary<int, string> flDic = new Dictionary<int, string>();
+            flDic.Add(1, "Kody");
+            flDic.Add(2, "Matt");
+            flDic.Add(3, "Oakley");
+            flDic.Add(4, "Kelton");
+
+            return View(flDic);
+        }
+
+
+
         // GET: Feedlots/Details/5
         public ActionResult Details(int? id)
         {

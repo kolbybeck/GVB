@@ -16,7 +16,7 @@ namespace GVB.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RoleID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please enter a role description")]
         [DisplayName("Role Description")]
         public String RoleDescr { get; set; }
 

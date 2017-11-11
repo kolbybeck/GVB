@@ -17,8 +17,9 @@ namespace GVB.Models
             [Required]
             [DisplayName("Cattle Type")]
             public int CattleTypeID { get; set; }
+
             [DisplayName("Cattle Type Description")]
-            [Required]
+            [Required(ErrorMessage = "Cattle type description required")]
             public String CattleTypeDesc { get; set; }
 
 

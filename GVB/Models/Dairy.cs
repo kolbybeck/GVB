@@ -18,27 +18,27 @@ namespace GVB.Models
         [DisplayName("Dairy ID")]
         public int dairyID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Dairy name required")]
         [DisplayName("Dairy Name")]
         public String dName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Address required")]
         [DisplayName("Address")]
         public String dAddress { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "City required")]
         [DisplayName("City")]
         public String dCity { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "State required")]
         [DisplayName("State")]
         public String dState { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Zip required")]
         [DisplayName("Zip")]
         public int dZip { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Phone number required")]
         [DisplayName("Phone")]
         public String dPhone { get; set; }
 

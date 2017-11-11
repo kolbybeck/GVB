@@ -11,8 +11,8 @@
     @foreach (var item in Model)
     {
 
-        <div class="row" align="center">
-            @Html.ActionLink(item.Value, "Create", "Deceased", new { feedlotID = iCount, feedlotName = item.Value }, new { @class = "btn btn-primary btn-large" })
+        <div class="row">
+            <h3> @item.Value   @Html.ActionLink(">>", "Create", "Deceased", new { feedlotID = iCount, feedlotName = item.Value }, new { @class = "btn btn-primary btn-large" })</h3>
         </div>
         <br />
         iCount++;

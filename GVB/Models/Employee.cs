@@ -13,24 +13,24 @@ namespace GVB.Models
     {
 
         [Key]
-        [Required]
+        [Required(ErrorMessage = "Employee ID required")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Employee ID")]
         public int EmployeeID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="First name required")]
         [DisplayName("Employee First Name")]
         public String EmpFname { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Last name required")]
         [DisplayName("Employee Last Name")]
         public String EmpLname { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Phone number required")]
         [DisplayName("Phone")]
         public String EmpPhone { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please assign role")]
         [DisplayName("Role")]
         [ForeignKey("Roles")]
         public virtual int RoleID{ get; set; }

@@ -16,7 +16,7 @@ namespace GVB.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int feedlotID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please enter a feedlot name")]
         [DisplayName("Feedlot Name")]
         public String fName { get; set; }
     }
