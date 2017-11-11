@@ -23,5 +23,10 @@ namespace GVB.Controllers
             
             return View(feedlot);
         }
+
+        public ActionResult Admin()
+        {
+            return View();
+        }
     }
 }
