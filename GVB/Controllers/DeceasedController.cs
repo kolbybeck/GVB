@@ -78,7 +78,7 @@ namespace GVB.Controllers
             {
                 db.Deceased.Add(deceased);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Deceased", new { feedlotID = deceased.FeedlotID });
             }
 
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName", deceased.DairyID);
