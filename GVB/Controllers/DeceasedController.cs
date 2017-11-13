@@ -72,7 +72,7 @@ namespace GVB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CattleID,CattleNumber,DeceasedDate,DairyID,FeedlotID,CattleTypeID,EmployeeID")] Deceased deceased)
+        public ActionResult Create([Bind(Include = "CattleNumber,DeceasedDate,DairyID,FeedlotID,EmployeeID")] Deceased deceased)
         {
             if (ModelState.IsValid)
             {
