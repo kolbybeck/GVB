@@ -13,7 +13,6 @@ namespace GVB.Models
     {
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CattleID { get; set; }
 
         [Required(ErrorMessage = "Cattle number required")]
