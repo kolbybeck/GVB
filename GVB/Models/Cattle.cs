@@ -14,6 +14,7 @@ namespace GVB.Models
         [Key]
         public int CattleID { get; set; }
         [DisplayName("Cattle Number")]
+        [RegularExpression(@"^\d{1,5}$", ErrorMessage = "Please Enter in a Valid Cattle Number")]
         public String CattleNumber { get; set; }
 
         [Required(ErrorMessage = "Please select a dairy")]
@@ -40,6 +41,7 @@ namespace GVB.Models
             set { _createdOn = value; }
         }
 
+        
     }
     
 }

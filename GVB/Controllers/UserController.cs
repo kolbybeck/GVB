@@ -17,8 +17,8 @@ namespace GVB.Controllers
         public ActionResult ChooseFeedlot()
         {
             Dictionary<int, string> flDic = new Dictionary<int, string>();
-            flDic.Add(1, "Kody");
-            flDic.Add(2, "Matt");
+            flDic.Add(1, "Old");
+            flDic.Add(2, "New");
             flDic.Add(3, "Oakley");
             flDic.Add(4, "Kelton");
 
@@ -27,6 +27,18 @@ namespace GVB.Controllers
 
         [Authorize]
         public ActionResult Admin()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Advanced()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult Reports()
         {
             return View();
         }

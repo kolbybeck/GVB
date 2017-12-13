@@ -17,6 +17,7 @@ namespace GVB.Models
 
         [Required(ErrorMessage = "Cattle number required")]
         [DisplayName("Cattle Number")]
+        [RegularExpression(@"^\d{1,5}$", ErrorMessage = "Please Enter in a Valid Cattle Number")]
         public String CattleNumber { get; set; }
 
         private DateTime _createdOn = DateTime.Now;
