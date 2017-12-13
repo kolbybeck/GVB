@@ -19,7 +19,6 @@ namespace GVB.DAL
             public DbSet<Deceased> Deceased { get; set; }
             public DbSet<Employee> Employee { get; set; }
             public DbSet<Roles> Roles { get; set; }
-            public DbSet<CattleType> CattleType { get; set; }
             public DbSet<State> State { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

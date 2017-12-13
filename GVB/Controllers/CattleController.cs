@@ -19,7 +19,7 @@ namespace GVB.Controllers
         // GET: Cattle
         public ActionResult Index()
         {
-            var cattle = db.Cattle.Include(c => c.CattleType).Include(c => c.Dairy).Include(c => c.Feedlot);
+            var cattle = db.Cattle.Include(c => c.Dairy).Include(c => c.Feedlot);
             return View(cattle.ToList());
         }
 
@@ -41,7 +41,6 @@ namespace GVB.Controllers
         // GET: Cattle/Create
         public ActionResult Create()
         {
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc");
             ViewBag.DairyID = new SelectList(db.Dairy, "DairyID", "dName");
             ViewBag.feedlotID = new SelectList(db.Feedlot, "FeedlotID", "fName");
             return View();
@@ -52,7 +51,7 @@ namespace GVB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cattleID,cattleNumber,DairyID,feedlotID,CattleTypeID,DateRecieved,ShippedDate")] Cattle cattle)
+        public ActionResult Create([Bind(Include = "cattleID,cattleNumber,DairyID,feedlotID,DateRecieved,ShippedDate")] Cattle cattle)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +60,6 @@ namespace GVB.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc", cattle.CattleTypeID);
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName", cattle.DairyID);
             ViewBag.feedlotID = new SelectList(db.Feedlot, "feedlotID", "fName", cattle.FeedlotID);
             return View(cattle);
@@ -79,7 +77,6 @@ namespace GVB.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc", cattle.CattleTypeID);
             ViewBag.DairyID = new SelectList(db.Dairy, "dairyID", "dName", cattle.DairyID);
             ViewBag.feedlotID = new SelectList(db.Feedlot, "feedlotID", "fName", cattle.FeedlotID);
             return View(cattle);
@@ -90,7 +87,7 @@ namespace GVB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cattleID,cattleNumber,DairyID,feedlotID,CattleTypeID,DateRecieved,ShippedDate")] Cattle cattle)
+        public ActionResult Edit([Bind(Include = "cattleID,cattleNumber,DairyID,feedlotID,DateRecieved,ShippedDate")] Cattle cattle)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +95,6 @@ namespace GVB.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CattleTypeID = new SelectList(db.CattleType, "CattleTypeID", "CattleTypeDesc", cattle.CattleTypeID);
             ViewBag.DairyID = new SelectList(db.Dairy, "DairyID", "dName", cattle.DairyID);
             ViewBag.feedlotID = new SelectList(db.Feedlot, "feedlotID", "fName", cattle.FeedlotID);
             return View(cattle);

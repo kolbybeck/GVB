@@ -149,7 +149,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CattleController.cs" />
-    <Compile Include="Controllers\CattleTypeController.cs" />
     <Compile Include="Controllers\DeceasedController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FeedlotController.cs" />
@@ -162,7 +161,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cattle.cs" />
-    <Compile Include="Models\CattleType.cs" />
     <Compile Include="Models\DairiesController.cs" />
     <Compile Include="Models\Dairy.cs" />
     <Compile Include="Models\Deceased.cs" />
@@ -210,10 +208,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\CattleType\Create.cshtml" />
-    <Content Include="Views\CattleType\Delete.cshtml" />
-    <Content Include="Views\CattleType\Edit.cshtml" />
-    <Content Include="Views\CattleType\Index.cshtml" />
     <Content Include="Views\Roles\Create.cshtml" />
     <Content Include="Views\Roles\Delete.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />

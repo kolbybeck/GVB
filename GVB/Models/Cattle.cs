@@ -26,11 +26,6 @@ namespace GVB.Models
         public virtual int FeedlotID { get; set; }
         public virtual Feedlot Feedlot { get; set; }
 
-        [DisplayName("Breed")]
-        [ForeignKey("CattleType")] 
-        public virtual int CattleTypeID { get; set; }
-        public virtual CattleType CattleType { get; set; }
-
         [Required(ErrorMessage = "Please select date received")]
         [DisplayName("Date Recieved")]
         [DataType(DataType.Date)]
