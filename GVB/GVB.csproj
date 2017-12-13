@@ -168,6 +168,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Feedlot.cs" />
     <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

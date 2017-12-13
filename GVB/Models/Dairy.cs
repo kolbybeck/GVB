@@ -28,9 +28,13 @@ namespace GVB.Models
         [DisplayName("City")]
         public String dCity { get; set; }
 
+
         [Required(ErrorMessage = "State required")]
         [DisplayName("State")]
-        public String dState { get; set; }
+        [ForeignKey("State")]
+        public virtual int StateID { get; set; }
+        public virtual State State { get; set; }
+
 
         [Required(ErrorMessage = "Zip required")]
         [DisplayName("Zip")]

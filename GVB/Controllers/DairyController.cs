@@ -48,7 +48,7 @@ namespace GVB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "dairyID,dName,dAddress,dCity,dState,dZip,dPhone")] Dairy dairy)
+        public ActionResult Create([Bind(Include = "dairyID,dName,dAddress,dCity,StateID,dZip,dPhone")] Dairy dairy)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace GVB.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "dairyID,dName,dAddress,dCity,dState,dZip,dPhone")] Dairy dairy)
+        public ActionResult Edit([Bind(Include = "dairyID,dName,dAddress,dCity,StateID,dZip,dPhone")] Dairy dairy)
         {
             if (ModelState.IsValid)
             {
