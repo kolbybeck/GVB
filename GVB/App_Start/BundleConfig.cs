@@ -24,7 +24,8 @@ namespace GVB
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/simplex.css",
+                      "~/Content/simplex.min.css",
                       "~/Content/site.css"));
         }
     }

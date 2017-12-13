@@ -18,7 +18,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <span class="login-title">Golden Valley Beef</span>
+                <span class="navbar-title">Golden Valley Beef</span>
             </div>
         </div>
     </div>
@@ -29,16 +29,22 @@
         {
             <div class="container login-credentials" align="center">
                 <div class="row">
-                    <label for="inputEmail">Username:</label>
-                    @Html.TextBox("Username")
+                    <div class="login-center">
+                        <label for="inputEmail" class="login-text">Username:</label>
+                        @Html.TextBox("Username")
+                    </div>
                 </div>
                 <div class="row">
-                    <label for="inputPassword">Password:</label>
-                    @Html.Password("Password")
+                    <div class="login-center">
+                        <label for="inputPassword" class="login-text">Password:</label>
+                        @Html.Password("Password")
+                    </div>
                 </div>
                 <br />
                 <div class="row">
-                    <button type="submit">Login</button>
+                    <div class="login-center">
+                        <button type="submit" class="btn btn-info btn-login">Login</button>
+                    </div>
                 </div>
             </div>
         }
