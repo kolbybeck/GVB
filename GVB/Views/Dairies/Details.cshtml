@@ -11,6 +11,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.State.StateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateName)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.dName)
         </dt>
 
@@ -35,14 +43,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.StateID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StateID)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.dZip)
         </dt>
 
@@ -61,5 +61,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.dairyID }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

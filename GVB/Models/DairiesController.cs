@@ -7,19 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GVB.DAL;
-using GVB.Models;
 
-namespace GVB.Controllers
+namespace GVB.Models
 {
-    [Authorize]
-    public class DairyController : Controller
+    public class DairiesController : Controller
     {
         private GVBDBContext db = new GVBDBContext();
 
         // GET: Dairies
         public ActionResult Index()
         {
-            return View(db.Dairy.ToList());
+            var dairy = db.Dairy.Include(d => d.State);
+            return View(dairy.ToList());
         }
 
         // GET: Dairies/Details/5
@@ -40,6 +39,7 @@ namespace GVB.Controllers
         // GET: Dairies/Create
         public ActionResult Create()
         {
+            ViewBag.StateID = new SelectList(db.State, "StateID", "StateName");
             return View();
         }
 
@@ -57,6 +57,7 @@ namespace GVB.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.StateID = new SelectList(db.State, "StateID", "StateName", dairy.StateID);
             return View(dairy);
         }
 
@@ -72,6 +73,7 @@ namespace GVB.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.StateID = new SelectList(db.State, "StateID", "StateName", dairy.StateID);
             return View(dairy);
         }
 
@@ -88,6 +90,7 @@ namespace GVB.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.StateID = new SelectList(db.State, "StateID", "StateName", dairy.StateID);
             return View(dairy);
         }
 

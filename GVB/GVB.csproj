@@ -150,12 +150,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CattleController.cs" />
     <Compile Include="Controllers\CattleTypeController.cs" />
-    <Compile Include="Controllers\DairyController.cs" />
     <Compile Include="Controllers\DeceasedController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FeedlotController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\StatesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\GVBDBContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -163,6 +163,7 @@
     </Compile>
     <Compile Include="Models\Cattle.cs" />
     <Compile Include="Models\CattleType.cs" />
+    <Compile Include="Models\DairiesController.cs" />
     <Compile Include="Models\Dairy.cs" />
     <Compile Include="Models\Deceased.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -227,11 +228,6 @@
     <Content Include="Views\Cattle\Details.cshtml" />
     <Content Include="Views\Cattle\Edit.cshtml" />
     <Content Include="Views\Cattle\Index.cshtml" />
-    <Content Include="Views\Dairy\Create.cshtml" />
-    <Content Include="Views\Dairy\Delete.cshtml" />
-    <Content Include="Views\Dairy\Details.cshtml" />
-    <Content Include="Views\Dairy\Edit.cshtml" />
-    <Content Include="Views\Dairy\Index.cshtml" />
     <Content Include="Views\Deceased\Create.cshtml" />
     <Content Include="Views\Deceased\Delete.cshtml" />
     <Content Include="Views\Deceased\Details.cshtml" />
@@ -246,6 +242,16 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\User\Admin.cshtml" />
     <Content Include="Views\Deceased\ConfirmCow.cshtml" />
+    <Content Include="Views\States\Create.cshtml" />
+    <Content Include="Views\States\Delete.cshtml" />
+    <Content Include="Views\States\Details.cshtml" />
+    <Content Include="Views\States\Edit.cshtml" />
+    <Content Include="Views\States\Index.cshtml" />
+    <Content Include="Views\Dairies\Create.cshtml" />
+    <Content Include="Views\Dairies\Delete.cshtml" />
+    <Content Include="Views\Dairies\Details.cshtml" />
+    <Content Include="Views\Dairies\Edit.cshtml" />
+    <Content Include="Views\Dairies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

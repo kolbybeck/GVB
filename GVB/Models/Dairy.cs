@@ -11,7 +11,7 @@ namespace GVB.Models
     [Table("Dairy")]
     public class Dairy
     {
-        
+
         [Key]
         [DisplayName("Dairy ID")]
         public int dairyID { get; set; }
@@ -46,5 +46,9 @@ namespace GVB.Models
         [DataType(DataType.PhoneNumber)]
         public String dPhone { get; set; }
 
+    }
 }
-}
+
+
+
+

@@ -7,10 +7,13 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.State.StateName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.dName)
         </th>
@@ -19,9 +22,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.dCity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StateID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.dZip)
@@ -35,6 +35,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.State.StateName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.dName)
         </td>
         <td>
@@ -44,18 +47,15 @@
             @Html.DisplayFor(modelItem => item.dCity)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StateID)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.dZip)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.dPhone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.dairyID }, new { @class = "btn btn-primary btn-large" }) 
-            @Html.ActionLink("Details", "Details", new { id=item.dairyID }, new { @class = "btn btn-primary btn-large" }) 
-            @Html.ActionLink("Delete", "Delete", new { id=item.dairyID }, new { @class = "btn btn-primary btn-large" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.dairyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.dairyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.dairyID })
         </td>
     </tr>
 }
