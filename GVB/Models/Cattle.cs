@@ -12,10 +12,7 @@ namespace GVB.Models
     public class Cattle
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CattleID { get; set; }
-
-        [Required(ErrorMessage = "Cattle number required")]
         [DisplayName("Cattle Number")]
         public String CattleNumber { get; set; }
 
@@ -29,7 +26,6 @@ namespace GVB.Models
         public virtual int FeedlotID { get; set; }
         public virtual Feedlot Feedlot { get; set; }
 
-        [Required(ErrorMessage = "Please select cattle type")]
         [DisplayName("Breed")]
         [ForeignKey("CattleType")] 
         public virtual int CattleTypeID { get; set; }

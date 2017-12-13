@@ -13,8 +13,6 @@ namespace GVB.Models
     {
 
         [Key]
-        [Required(ErrorMessage = "Employee ID required")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Employee ID")]
         public int EmployeeID { get; set; }
 

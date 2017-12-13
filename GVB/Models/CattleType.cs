@@ -13,8 +13,6 @@ namespace GVB.Models
     {
 
             [Key]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            [Required]
             [DisplayName("Cattle Type")]
             public int CattleTypeID { get; set; }
 
