@@ -19,11 +19,18 @@ namespace GVB.Models
         [DisplayName("Cattle Number")]
         public String CattleNumber { get; set; }
 
-        [Required(ErrorMessage = "Deceased date required")]
-        [DisplayName("Deceased Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime DeceasedDate { get; set; }
+        private DateTime _createdOn = DateTime.Now;
+        [Display(Name = "Deceased Date")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime DeceasedDate
+        {
+            get
+            {
+                return (_createdOn == DateTime.Now) ? DateTime.Now : _createdOn;
+            }
+            set { _createdOn = value; }
+        }
 
         [Required(ErrorMessage = "Please select a dairy")]
         [ForeignKey("Dairy")]

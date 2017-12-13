@@ -26,11 +26,19 @@ namespace GVB.Models
         public virtual int FeedlotID { get; set; }
         public virtual Feedlot Feedlot { get; set; }
 
+        private DateTime _createdOn = DateTime.MinValue;
         [Required(ErrorMessage = "Please select date received")]
         [DisplayName("Date Recieved")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public virtual DateTime DateRecieved { get; set; }
+        public virtual DateTime DateRecieved
+        {
+            get
+            {
+                return (_createdOn == DateTime.MinValue) ? DateTime.Now : _createdOn;
+            }
+            set { _createdOn = value; }
+        }
 
     }
     
